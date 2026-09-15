@@ -1,0 +1,19 @@
+# Local reference books and working documents
+*.pdf
+*.PDF
+*.docx
+*.doc
+*.zip
+
+# Local system files and credentials
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+
+# Generated files and local dependencies
+node_modules/
+tmp/
+output/
+*.log
