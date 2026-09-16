@@ -79,6 +79,8 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 .pronoun-autos{min-width:840px}
 .article-table{min-width:720px}
 .noun-table{min-width:850px}
+.adjective-table{min-width:910px}
+.adjective-two-table{min-width:720px}
 .verb-table{min-width:800px}
 .table-note{margin:12px 0 0;color:var(--muted);font-size:1rem;line-height:1.65}
 .table-note strong{color:var(--ink)}
@@ -125,6 +127,8 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
  .grammar-view{padding:0}
  .grammar-hero{padding:0 0 8px;border:0;border-bottom:2px solid #333;border-radius:0}
  .grammar-sheet{break-inside:avoid;margin:10px 0;padding:9px;border-color:#aaa}
+ #adjectives{break-inside:auto}
+ .adjective-paradigm{break-inside:avoid}
  .sheet-heading{margin-bottom:7px;padding-bottom:5px}
  .sheet-heading h3{font-size:13pt}
  .sheet-heading p{font-size:10pt}
@@ -188,7 +192,7 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 
 <section id="grammarView" class="view-panel grammar-view" hidden aria-labelledby="grammarTitle">
 <div class="grammar-hero"><h2 id="grammarTitle">Grammar quick sheets</h2><button type="button" id="printGrammar" class="grammar-print">Print</button></div>
-<nav class="sheet-nav" aria-label="速查表導覽"><a href="#personal-pronouns"><span class="sheet-no">01</span>Pronouns</a><a href="#type-two-nouns"><span class="sheet-no">02</span>Article &amp; nouns</a><a href="#contract-verbs"><span class="sheet-no">03</span>Contract verbs</a></nav>
+<nav class="sheet-nav" aria-label="速查表導覽"><a href="#personal-pronouns"><span class="sheet-no">01</span>Pronouns</a><a href="#type-two-nouns"><span class="sheet-no">02</span>Article &amp; nouns</a><a href="#adjectives"><span class="sheet-no">03</span>Adjectives</a><a href="#contract-verbs"><span class="sheet-no">04</span>Contract verbs</a></nav>
 
 <article id="personal-pronouns" class="grammar-sheet">
 <div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">01</span><h3>Personal pronouns</h3></div><p>Nom. · Acc. · Gen. · Dat. — enclitic forms follow the slash.</p></div>
@@ -230,8 +234,44 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 <p class="table-note">Neuter: Nom. = Acc. = Voc.; plural <span lang="grc">-α</span>. Neuter plural subjects usually take a singular verb. Type 2a is mostly masculine, with some feminine or common-gender nouns.</p>
 </article>
 
+<article id="adjectives" class="grammar-sheet">
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">03</span><h3>Adjectives</h3></div><p>Agreement = gender + number + case.</p></div>
+<section class="adjective-paradigm" aria-labelledby="adjective-etaTitle">
+<h4 class="subsheet-title" id="adjective-etaTitle">Three endings · <span lang="grc">-ος, -η, -ον</span> · <span lang="grc">ἀγαθός · ἀγαθή · ἀγαθόν</span> “good”</h4>
+<div class="quick-table-wrap"><table class="quick-table adjective-table" id="adjective-eta" aria-labelledby="adjective-etaTitle"><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="3" scope="colgroup">Singular</th><th colspan="3" scope="colgroup">Plural</th></tr><tr><th scope="col">masc.</th><th scope="col">fem.</th><th scope="col">neut.</th><th scope="col">masc.</th><th scope="col">fem.</th><th scope="col">neut.</th></tr></thead><tbody>
+<tr><th scope="row"><span class="case-key">Nom.</span></th><td><span class="greek-form" lang="grc">ἀγαθός</span></td><td><span class="greek-form" lang="grc">ἀγαθή</span></td><td><span class="greek-form" lang="grc">ἀγαθόν</span></td><td><span class="greek-form" lang="grc">ἀγαθοί</span></td><td><span class="greek-form" lang="grc">ἀγαθαί</span></td><td><span class="greek-form" lang="grc">ἀγαθά</span></td></tr>
+<tr><th scope="row"><span class="case-key">Acc.</span></th><td><span class="greek-form" lang="grc">ἀγαθόν</span></td><td><span class="greek-form" lang="grc">ἀγαθήν</span></td><td><span class="greek-form" lang="grc">ἀγαθόν</span></td><td><span class="greek-form" lang="grc">ἀγαθούς</span></td><td><span class="greek-form" lang="grc">ἀγαθάς</span></td><td><span class="greek-form" lang="grc">ἀγαθά</span></td></tr>
+<tr><th scope="row"><span class="case-key">Gen.</span></th><td><span class="greek-form" lang="grc">ἀγαθοῦ</span></td><td><span class="greek-form" lang="grc">ἀγαθῆς</span></td><td><span class="greek-form" lang="grc">ἀγαθοῦ</span></td><td><span class="greek-form" lang="grc">ἀγαθῶν</span></td><td><span class="greek-form" lang="grc">ἀγαθῶν</span></td><td><span class="greek-form" lang="grc">ἀγαθῶν</span></td></tr>
+<tr><th scope="row"><span class="case-key">Dat.</span></th><td><span class="greek-form" lang="grc">ἀγαθῷ</span></td><td><span class="greek-form" lang="grc">ἀγαθῇ</span></td><td><span class="greek-form" lang="grc">ἀγαθῷ</span></td><td><span class="greek-form" lang="grc">ἀγαθοῖς</span></td><td><span class="greek-form" lang="grc">ἀγαθαῖς</span></td><td><span class="greek-form" lang="grc">ἀγαθοῖς</span></td></tr>
+<tr><th scope="row"><span class="case-key">Voc.</span></th><td><span class="greek-form" lang="grc">ἀγαθέ</span></td><td><span class="greek-form" lang="grc">ἀγαθή</span></td><td><span class="greek-form" lang="grc">ἀγαθόν</span></td><td><span class="greek-form" lang="grc">ἀγαθοί</span></td><td><span class="greek-form" lang="grc">ἀγαθαί</span></td><td><span class="greek-form" lang="grc">ἀγαθά</span></td></tr>
+</tbody></table></div>
+</section>
+<section class="adjective-paradigm" aria-labelledby="adjective-alphaTitle">
+<h4 class="subsheet-title" id="adjective-alphaTitle">Three endings · <span lang="grc">-ος, -α, -ον</span> · <span lang="grc">ἄξιος · ἀξία · ἄξιον</span> “worthy”</h4>
+<div class="quick-table-wrap"><table class="quick-table adjective-table" id="adjective-alpha" aria-labelledby="adjective-alphaTitle"><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="3" scope="colgroup">Singular</th><th colspan="3" scope="colgroup">Plural</th></tr><tr><th scope="col">masc.</th><th scope="col">fem.</th><th scope="col">neut.</th><th scope="col">masc.</th><th scope="col">fem.</th><th scope="col">neut.</th></tr></thead><tbody>
+<tr><th scope="row"><span class="case-key">Nom.</span></th><td><span class="greek-form" lang="grc">ἄξιος</span></td><td><span class="greek-form" lang="grc">ἀξία</span></td><td><span class="greek-form" lang="grc">ἄξιον</span></td><td><span class="greek-form" lang="grc">ἄξιοι</span></td><td><span class="greek-form" lang="grc">ἄξιαι</span></td><td><span class="greek-form" lang="grc">ἄξια</span></td></tr>
+<tr><th scope="row"><span class="case-key">Acc.</span></th><td><span class="greek-form" lang="grc">ἄξιον</span></td><td><span class="greek-form" lang="grc">ἀξίαν</span></td><td><span class="greek-form" lang="grc">ἄξιον</span></td><td><span class="greek-form" lang="grc">ἀξίους</span></td><td><span class="greek-form" lang="grc">ἀξίας</span></td><td><span class="greek-form" lang="grc">ἄξια</span></td></tr>
+<tr><th scope="row"><span class="case-key">Gen.</span></th><td><span class="greek-form" lang="grc">ἀξίου</span></td><td><span class="greek-form" lang="grc">ἀξίας</span></td><td><span class="greek-form" lang="grc">ἀξίου</span></td><td><span class="greek-form" lang="grc">ἀξίων</span></td><td><span class="greek-form" lang="grc">ἀξίων</span></td><td><span class="greek-form" lang="grc">ἀξίων</span></td></tr>
+<tr><th scope="row"><span class="case-key">Dat.</span></th><td><span class="greek-form" lang="grc">ἀξίῳ</span></td><td><span class="greek-form" lang="grc">ἀξίᾳ</span></td><td><span class="greek-form" lang="grc">ἀξίῳ</span></td><td><span class="greek-form" lang="grc">ἀξίοις</span></td><td><span class="greek-form" lang="grc">ἀξίαις</span></td><td><span class="greek-form" lang="grc">ἀξίοις</span></td></tr>
+<tr><th scope="row"><span class="case-key">Voc.</span></th><td><span class="greek-form" lang="grc">ἄξιε</span></td><td><span class="greek-form" lang="grc">ἀξία</span></td><td><span class="greek-form" lang="grc">ἄξιον</span></td><td><span class="greek-form" lang="grc">ἄξιοι</span></td><td><span class="greek-form" lang="grc">ἄξιαι</span></td><td><span class="greek-form" lang="grc">ἄξια</span></td></tr>
+</tbody></table></div>
+</section>
+<section class="adjective-paradigm" aria-labelledby="adjective-twoTitle">
+<h4 class="subsheet-title" id="adjective-twoTitle">Two endings · <span lang="grc">-ος, -ον</span> · <span lang="grc">ἄδικος · ἄδικον</span> “unjust”</h4>
+<div class="quick-table-wrap"><table class="quick-table adjective-table adjective-two-table" id="adjective-two" aria-labelledby="adjective-twoTitle"><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="2" scope="colgroup">Singular</th><th colspan="2" scope="colgroup">Plural</th></tr><tr><th scope="col">masc. / fem.</th><th scope="col">neut.</th><th scope="col">masc. / fem.</th><th scope="col">neut.</th></tr></thead><tbody>
+<tr><th scope="row"><span class="case-key">Nom.</span></th><td><span class="greek-form" lang="grc">ἄδικος</span></td><td><span class="greek-form" lang="grc">ἄδικον</span></td><td><span class="greek-form" lang="grc">ἄδικοι</span></td><td><span class="greek-form" lang="grc">ἄδικα</span></td></tr>
+<tr><th scope="row"><span class="case-key">Acc.</span></th><td><span class="greek-form" lang="grc">ἄδικον</span></td><td><span class="greek-form" lang="grc">ἄδικον</span></td><td><span class="greek-form" lang="grc">ἀδίκους</span></td><td><span class="greek-form" lang="grc">ἄδικα</span></td></tr>
+<tr><th scope="row"><span class="case-key">Gen.</span></th><td><span class="greek-form" lang="grc">ἀδίκου</span></td><td><span class="greek-form" lang="grc">ἀδίκου</span></td><td><span class="greek-form" lang="grc">ἀδίκων</span></td><td><span class="greek-form" lang="grc">ἀδίκων</span></td></tr>
+<tr><th scope="row"><span class="case-key">Dat.</span></th><td><span class="greek-form" lang="grc">ἀδίκῳ</span></td><td><span class="greek-form" lang="grc">ἀδίκῳ</span></td><td><span class="greek-form" lang="grc">ἀδίκοις</span></td><td><span class="greek-form" lang="grc">ἀδίκοις</span></td></tr>
+<tr><th scope="row"><span class="case-key">Voc.</span></th><td><span class="greek-form" lang="grc">ἄδικε</span></td><td><span class="greek-form" lang="grc">ἄδικον</span></td><td><span class="greek-form" lang="grc">ἄδικοι</span></td><td><span class="greek-form" lang="grc">ἄδικα</span></td></tr>
+</tbody></table></div>
+</section>
+<p class="table-note">Three endings: masc. / neut. → 2nd decl.; fem. → 1st decl. Feminine <span lang="grc">-α</span> after <span lang="grc">ε, ι, ρ</span>; otherwise <span lang="grc">-η</span>. Two endings: masc. = fem.</p>
+<p class="table-note">Feminine plural accent follows the masculine: <span lang="grc">ἄξιαι, ἀξίων</span>. Regular 1st/2nd-declension patterns only; dual omitted. <a href="https://ccel.org/ccel/smyth/grammar/html/smyth_2h_uni.htm" target="_blank" rel="noopener">Smyth §§286–289</a>.</p>
+</article>
+
 <article id="contract-verbs" class="grammar-sheet">
-<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">03</span><h3>Contract verbs · -άω / -έω / -όω</h3></div></div>
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">04</span><h3>Contract verbs · -άω / -έω / -όω</h3></div></div>
 <div class="verb-toolbar"><p>Present indicative active · <span id="verbFormLabel" aria-live="polite">contracted</span></p><div class="verb-form-switch" role="group" aria-label="Verb forms"><button type="button" data-verb-form="contracted" aria-pressed="true" aria-controls="indicativeTable imperativeTable">Contracted</button><button type="button" data-verb-form="uncontracted" aria-pressed="false" aria-controls="indicativeTable imperativeTable">Uncontracted</button></div></div>
 <div class="quick-table-wrap"><table class="quick-table verb-table" id="indicativeTable"><thead><tr><th scope="col">Person</th><th scope="col">α-contract<br><span lang="grc">ὁράω</span> “see”</th><th scope="col">ε-contract<br><span lang="grc">ποιέω</span> “make / do”</th><th scope="col">ο-contract<br><span lang="grc">δηλόω</span> “show”</th></tr></thead><tbody>
 <tr><th scope="row">1s. · I</th><td><span class="greek-form" lang="grc" data-contracted="ὁρῶ" data-uncontracted="ὁρά·ω">ὁρῶ</span></td><td><span class="greek-form" lang="grc" data-contracted="ποιῶ" data-uncontracted="ποιέ·ω">ποιῶ</span></td><td><span class="greek-form" lang="grc" data-contracted="δηλῶ" data-uncontracted="δηλό·ω">δηλῶ</span></td></tr>
@@ -406,7 +446,7 @@ function setPage(page,{scroll=true}={}){
   if(button.dataset.pageNav===(grammar?'grammar':'vocabulary'))button.setAttribute('aria-current','page');
   else button.removeAttribute('aria-current');
  });
- $('viewEdition').innerHTML=grammar?'<strong>Quick sheets</strong>3 組表格 · 離線使用':'<strong>Section 1–2</strong>14 個段落 · 離線使用';
+ $('viewEdition').innerHTML=grammar?'<strong>Quick sheets</strong>4 組表格 · 離線使用':'<strong>Section 1–2</strong>14 個段落 · 離線使用';
  document.title=grammar?'Reading Greek · 文法速查':'Reading Greek · Section 1–2 單字查詢';
  if(scroll)window.scrollTo({top:0,behavior:'auto'});
 }
@@ -416,7 +456,7 @@ document.querySelectorAll('[data-page-nav]').forEach(button=>button.addEventList
  try{history.replaceState(null,'',page==='grammar'?'#grammar':location.pathname+location.search)}catch{}
 }));
 const initialHash=location.hash.slice(1);
-setPage(['grammar','personal-pronouns','type-two-nouns','contract-verbs'].includes(initialHash)?'grammar':'vocabulary',{scroll:false});
+setPage(['grammar','personal-pronouns','type-two-nouns','adjectives','contract-verbs'].includes(initialHash)?'grammar':'vocabulary',{scroll:false});
 $('expand').addEventListener('click',()=>{state.scope='all';state.segment='all';state.learn=false;$('learnOnly').checked=false;render()});
 $('reset').addEventListener('click',()=>{Object.assign(state,{scope:'all',segment:'all',query:'',learn:false});$('search').value='';$('learnOnly').checked=false;render()});
 document.addEventListener('keydown',e=>{

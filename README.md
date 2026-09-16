@@ -7,7 +7,7 @@ Website (after GitHub Pages is enabled): https://tarawrrs.github.io/Reading-Gree
 ## Contents
 
 - Reading Greek Sections 1–2 vocabulary, search, and alphabet navigation.
-- Personal pronouns and Type 2 noun paradigms.
+- Personal pronouns, definite article, Type 2 nouns, and regular adjective paradigms.
 - Contracted/uncontracted verb forms and the contraction matrix.
 - Print layouts and embedded Greek fonts.
 
