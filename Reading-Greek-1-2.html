@@ -329,6 +329,33 @@ function render(){
 document.querySelectorAll('[data-scope]').forEach(b=>b.addEventListener('click',()=>{state.scope=b.dataset.scope;state.segment='all';render()}));
 $('segments').addEventListener('click',e=>{const b=e.target.closest('[data-segment]');if(b){state.segment=b.dataset.segment;render()}});
 $('rows').addEventListener('click',e=>{const b=e.target.closest('[data-source]');if(b){state.scope=b.dataset.source[0];state.segment=b.dataset.source;state.query='';$('search').value='';state.learn=false;$('learnOnly').checked=false;render();window.scrollTo({top:0,behavior:'smooth'})}});
+// An upward scroll in the vocabulary table's side gutters jumps to the page top.
+// Gestures inside the table, horizontal scrolling and pinch zoom stay native.
+function inVocabularyGutter(x,y,target){
+ if(document.body.dataset.page!=='vocabulary'||$('tableShell').hidden||window.scrollY<=0)return false;
+ if(target?.closest?.('button,a,input,select,textarea,summary,[contenteditable]'))return false;
+ const rect=$('tableShell').getBoundingClientRect();
+ return (x<rect.left||x>rect.right)&&y>=Math.max(0,rect.top)&&y<=rect.bottom;
+}
+document.addEventListener('wheel',e=>{
+ if(!e.ctrlKey&&e.deltaY<0&&Math.abs(e.deltaY)>Math.abs(e.deltaX)&&inVocabularyGutter(e.clientX,e.clientY,e.target)){
+  window.scrollTo({top:0,behavior:'auto'});
+ }
+},{passive:true});
+let gutterTouch=null;
+document.addEventListener('touchstart',e=>{
+ gutterTouch=null;
+ if(e.touches.length!==1)return;
+ const t=e.touches[0];
+ if(inVocabularyGutter(t.clientX,t.clientY,e.target))gutterTouch={id:t.identifier,x:t.clientX,y:t.clientY};
+},{passive:true});
+document.addEventListener('touchend',e=>{
+ const start=gutterTouch;gutterTouch=null;
+ if(!start||e.touches.length||document.body.dataset.page!=='vocabulary')return;
+ const t=Array.from(e.changedTouches).find(t=>t.identifier===start.id);
+ if(t&&t.clientY-start.y>40&&t.clientY-start.y>Math.abs(t.clientX-start.x))window.scrollTo({top:0,behavior:'auto'});
+},{passive:true});
+document.addEventListener('touchcancel',()=>{gutterTouch=null},{passive:true});
 $('search').addEventListener('input',e=>{state.query=e.target.value;render()});
 $('clear').addEventListener('click',()=>{state.query='';$('search').value='';render();$('search').focus()});
 $('learnOnly').addEventListener('change',e=>{state.learn=e.target.checked;render()});
