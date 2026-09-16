@@ -77,6 +77,7 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 .case-key{font:1.15rem/1.5 var(--serif);color:var(--ink)}
 .pronoun-primary{min-width:720px}
 .pronoun-autos{min-width:840px}
+.article-table{min-width:720px}
 .noun-table{min-width:850px}
 .verb-table{min-width:800px}
 .table-note{margin:12px 0 0;color:var(--muted);font-size:1rem;line-height:1.65}
@@ -187,7 +188,7 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 
 <section id="grammarView" class="view-panel grammar-view" hidden aria-labelledby="grammarTitle">
 <div class="grammar-hero"><h2 id="grammarTitle">Grammar quick sheets</h2><button type="button" id="printGrammar" class="grammar-print">Print</button></div>
-<nav class="sheet-nav" aria-label="速查表導覽"><a href="#personal-pronouns"><span class="sheet-no">01</span>Pronouns</a><a href="#type-two-nouns"><span class="sheet-no">02</span>Type 2 nouns</a><a href="#contract-verbs"><span class="sheet-no">03</span>Contract verbs</a></nav>
+<nav class="sheet-nav" aria-label="速查表導覽"><a href="#personal-pronouns"><span class="sheet-no">01</span>Pronouns</a><a href="#type-two-nouns"><span class="sheet-no">02</span>Article &amp; nouns</a><a href="#contract-verbs"><span class="sheet-no">03</span>Contract verbs</a></nav>
 
 <article id="personal-pronouns" class="grammar-sheet">
 <div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">01</span><h3>Personal pronouns</h3></div><p>Nom. · Acc. · Gen. · Dat. — enclitic forms follow the slash.</p></div>
@@ -209,7 +210,16 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 </article>
 
 <article id="type-two-nouns" class="grammar-sheet">
-<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">02</span><h3>Type 2 nouns · ο-stems</h3></div><p>2a: <span lang="grc">ἄνθρωπος</span> · 2b: <span lang="grc">ἔργον</span></p></div>
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">02</span><h3>Article &amp; Type 2 nouns</h3></div><p>2a: <span lang="grc">ἄνθρωπος</span> · 2b: <span lang="grc">ἔργον</span></p></div>
+<h4 class="subsheet-title" id="articleTitle">Definite article · <span lang="grc">ὁ ἡ τό</span></h4>
+<div class="quick-table-wrap"><table class="quick-table article-table" aria-labelledby="articleTitle"><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="3" scope="colgroup">Singular</th><th colspan="3" scope="colgroup">Plural</th></tr><tr><th scope="col">masc.</th><th scope="col">fem.</th><th scope="col">neut.</th><th scope="col">masc.</th><th scope="col">fem.</th><th scope="col">neut.</th></tr></thead><tbody>
+<tr><th scope="row"><span class="case-key">Nom.</span></th><td><span class="greek-form" lang="grc">ὁ</span></td><td><span class="greek-form" lang="grc">ἡ</span></td><td><span class="greek-form" lang="grc">τό</span></td><td><span class="greek-form" lang="grc">οἱ</span></td><td><span class="greek-form" lang="grc">αἱ</span></td><td><span class="greek-form" lang="grc">τά</span></td></tr>
+<tr><th scope="row"><span class="case-key">Acc.</span></th><td><span class="greek-form" lang="grc">τόν</span></td><td><span class="greek-form" lang="grc">τήν</span></td><td><span class="greek-form" lang="grc">τό</span></td><td><span class="greek-form" lang="grc">τούς</span></td><td><span class="greek-form" lang="grc">τάς</span></td><td><span class="greek-form" lang="grc">τά</span></td></tr>
+<tr><th scope="row"><span class="case-key">Gen.</span></th><td><span class="greek-form" lang="grc">τοῦ</span></td><td><span class="greek-form" lang="grc">τῆς</span></td><td><span class="greek-form" lang="grc">τοῦ</span></td><td><span class="greek-form" lang="grc">τῶν</span></td><td><span class="greek-form" lang="grc">τῶν</span></td><td><span class="greek-form" lang="grc">τῶν</span></td></tr>
+<tr><th scope="row"><span class="case-key">Dat.</span></th><td><span class="greek-form" lang="grc">τῷ</span></td><td><span class="greek-form" lang="grc">τῇ</span></td><td><span class="greek-form" lang="grc">τῷ</span></td><td><span class="greek-form" lang="grc">τοῖς</span></td><td><span class="greek-form" lang="grc">ταῖς</span></td><td><span class="greek-form" lang="grc">τοῖς</span></td></tr>
+</tbody></table></div>
+<p class="table-note">No vocative. <span lang="grc">ὁ, ἡ, οἱ, αἱ</span>: normally unaccented. <a href="https://grammars.alpheios.net/smyth/xhtml/body.1_div1.2_div2.6.html" target="_blank" rel="noopener">Smyth §332</a>.</p>
+<h4 class="subsheet-title">Type 2 nouns · ο-stems</h4>
 <div class="quick-table-wrap"><table class="quick-table noun-table"><thead><tr><th scope="col">Case</th><th scope="col">2a singular<br><span lang="grc">ἄνθρωπος, ὁ</span></th><th scope="col">2a plural</th><th scope="col">2b singular<br><span lang="grc">ἔργον, τό</span></th><th scope="col">2b plural</th></tr></thead><tbody>
 <tr><th scope="row"><span class="case-key">Nom.</span></th><td><span class="greek-form" lang="grc">ἄνθρωπ·ος</span></td><td><span class="greek-form" lang="grc">ἄνθρωπ·οι</span></td><td><span class="greek-form" lang="grc">ἔργ·ον</span></td><td><span class="greek-form" lang="grc">ἔργ·α</span></td></tr>
 <tr><th scope="row"><span class="case-key">Acc.</span></th><td><span class="greek-form" lang="grc">ἄνθρωπ·ον</span></td><td><span class="greek-form" lang="grc">ἀνθρώπ·ους</span></td><td><span class="greek-form" lang="grc">ἔργ·ον</span></td><td><span class="greek-form" lang="grc">ἔργ·α</span></td></tr>
