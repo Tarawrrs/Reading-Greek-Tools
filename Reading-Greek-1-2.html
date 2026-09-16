@@ -155,9 +155,8 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 .contraction-table{min-width:840px}
 .contraction-table th[lang="grc"],.contraction-table td[lang="grc"]{font:1.55rem/1.4 var(--serif);white-space:nowrap}
 .table-note a{color:var(--accent);text-underline-offset:3px}
-.accent-table-wrap{max-width:480px}
-.accent-table{font-size:1rem;line-height:1.4}
-.accent-table math{font-size:1.55rem}
+.accent-table-wrap{max-width:900px}
+.accent-table{min-width:720px;font-size:1rem;line-height:1.4}
 @media print{
  .accent-table{min-width:0}
  .contraction-table{min-width:0}
@@ -245,13 +244,13 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 <section class="rules-panel" aria-labelledby="accentRulesTitle">
 <h4 id="accentRulesTitle">Accent in contraction</h4>
 <div class="quick-table-wrap accent-table-wrap"><table class="quick-table accent-table" aria-labelledby="accentRulesTitle">
-<thead><tr><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+<thead><tr><th scope="col">Accented vowel</th><th scope="col">Result</th><th scope="col">Example</th></tr></thead>
 <tbody>
-<tr><td><math aria-label="V one with acute plus V two"><msub><mover accent="true"><mi>V</mi><mo>´</mo></mover><mn>1</mn></msub><mo>+</mo><msub><mi>V</mi><mn>2</mn></msub></math></td><td><math aria-label="V with circumflex"><mover accent="true"><mi>V</mi><mo>^</mo></mover></math></td></tr>
-<tr><td><math aria-label="V one plus V two with acute"><msub><mi>V</mi><mn>1</mn></msub><mo>+</mo><msub><mover accent="true"><mi>V</mi><mo>´</mo></mover><mn>2</mn></msub></math></td><td><math aria-label="V with acute"><mover accent="true"><mi>V</mi><mo>´</mo></mover></math></td></tr>
-<tr><td><math aria-label="V one plus V two, both unaccented"><msub><mi>V</mi><mn>1</mn></msub><mo>+</mo><msub><mi>V</mi><mn>2</mn></msub></math></td><td><math aria-label="V, unaccented"><mi>V</mi></math></td></tr>
+<tr><th scope="row">1st (acute)</th><td>→ circumflex</td><td><span class="greek-form" lang="grc">ποιέω → ποιῶ</span></td></tr>
+<tr><th scope="row">2nd (acute)</th><td>→ acute</td><td><span class="greek-form" lang="grc">ἑσταώς → ἑστώς</span></td></tr>
+<tr><th scope="row">Neither</th><td>→ no new accent</td><td><span class="greek-form" lang="grc">ὅραε → ὅρα</span></td></tr>
 </tbody></table></div>
-<p class="table-note">Usual pattern; normal accent rules still apply. <a href="https://grammars.alpheios.net/smyth/xhtml/body.1_div1.1_div2.7.html" target="_blank" rel="noopener">Smyth §§171–172</a>.</p>
+<p class="table-note">Accent elsewhere stays. Normal accent rules apply. <a href="https://grammars.alpheios.net/smyth/xhtml/body.1_div1.1_div2.7.html" target="_blank" rel="noopener">Smyth §§171–172</a>.</p>
 </section>
 </article>
 <p class="grammar-footer-note">Attic Greek · JACT 2a / 2b</p>
