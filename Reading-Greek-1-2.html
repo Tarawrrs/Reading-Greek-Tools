@@ -155,8 +155,9 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 .contraction-table{min-width:840px}
 .contraction-table th[lang="grc"],.contraction-table td[lang="grc"]{font:1.55rem/1.4 var(--serif);white-space:nowrap}
 .table-note a{color:var(--accent);text-underline-offset:3px}
-.accent-table{min-width:720px;font-size:1rem;line-height:1.5}
-.accent-intro{margin:0 0 12px}
+.accent-table-wrap{max-width:480px}
+.accent-table{font-size:1rem;line-height:1.4}
+.accent-table math{font-size:1.55rem}
 @media print{
  .accent-table{min-width:0}
  .contraction-table{min-width:0}
@@ -243,13 +244,12 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 </section>
 <section class="rules-panel" aria-labelledby="accentRulesTitle">
 <h4 id="accentRulesTitle">Accent in contraction</h4>
-<p class="table-note accent-intro">Accent the uncontracted form first, then contract the vowels.</p>
-<div class="quick-table-wrap"><table class="quick-table accent-table" aria-labelledby="accentRulesTitle">
-<thead><tr><th scope="col">Before contraction</th><th scope="col">After contraction</th><th scope="col">Example</th></tr></thead>
+<div class="quick-table-wrap accent-table-wrap"><table class="quick-table accent-table" aria-labelledby="accentRulesTitle">
+<thead><tr><th scope="col">Before</th><th scope="col">After</th></tr></thead>
 <tbody>
-<tr><th scope="row">Acute on the first vowel</th><td>Circumflex <span lang="grc">῀</span></td><td><span class="greek-form" lang="grc">ποιέω → ποιῶ</span></td></tr>
-<tr><th scope="row">Acute on the second vowel</th><td>Acute <span lang="grc">´</span></td><td><span class="greek-form" lang="grc">ἑσταώς → ἑστώς</span></td></tr>
-<tr><th scope="row">Neither vowel accented</th><td>No new accent;<br>existing accent stays</td><td><span class="greek-form" lang="grc">ὅραε → ὅρα</span></td></tr>
+<tr><td><math aria-label="V one with acute plus V two"><msub><mover accent="true"><mi>V</mi><mo>´</mo></mover><mn>1</mn></msub><mo>+</mo><msub><mi>V</mi><mn>2</mn></msub></math></td><td><math aria-label="V with circumflex"><mover accent="true"><mi>V</mi><mo>^</mo></mover></math></td></tr>
+<tr><td><math aria-label="V one plus V two with acute"><msub><mi>V</mi><mn>1</mn></msub><mo>+</mo><msub><mover accent="true"><mi>V</mi><mo>´</mo></mover><mn>2</mn></msub></math></td><td><math aria-label="V with acute"><mover accent="true"><mi>V</mi><mo>´</mo></mover></math></td></tr>
+<tr><td><math aria-label="V one plus V two, both unaccented"><msub><mi>V</mi><mn>1</mn></msub><mo>+</mo><msub><mi>V</mi><mn>2</mn></msub></math></td><td><math aria-label="V, unaccented"><mi>V</mi></math></td></tr>
 </tbody></table></div>
 <p class="table-note">Usual pattern; normal accent rules still apply. <a href="https://grammars.alpheios.net/smyth/xhtml/body.1_div1.1_div2.7.html" target="_blank" rel="noopener">Smyth §§171–172</a>.</p>
 </section>
