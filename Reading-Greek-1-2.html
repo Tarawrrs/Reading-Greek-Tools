@@ -155,7 +155,10 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 .contraction-table{min-width:840px}
 .contraction-table th[lang="grc"],.contraction-table td[lang="grc"]{font:1.55rem/1.4 var(--serif);white-space:nowrap}
 .table-note a{color:var(--accent);text-underline-offset:3px}
+.accent-table{min-width:720px;font-size:1rem;line-height:1.5}
+.accent-intro{margin:0 0 12px}
 @media print{
+ .accent-table{min-width:0}
  .contraction-table{min-width:0}
  .contraction-table th[lang="grc"],.contraction-table td[lang="grc"]{font-size:13pt}
  .rules-panel{break-inside:avoid}
@@ -237,6 +240,18 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 <tr><th scope="row" lang="grc">ο</th><td lang="grc">ω</td><td lang="grc">ου</td><td lang="grc">οι</td><td lang="grc">οι</td><td lang="grc">ω</td><td lang="grc">οι</td><td lang="grc">ου</td><td lang="grc">ου</td><td lang="grc">οι</td><td lang="grc">ω</td><td lang="grc">ῳ</td></tr>
 </tbody></table></div>
 <p class="table-note">First vowel: row; second vowel: column. <a href="https://api.pageplace.de/preview/DT0400.9780511353086_A24403766/preview-9780511353086_A24403766.pdf#page=38" target="_blank" rel="noopener">Reading Greek: Grammar and Exercises, §25, p.20</a>.</p>
+</section>
+<section class="rules-panel" aria-labelledby="accentRulesTitle">
+<h4 id="accentRulesTitle">Accent in contraction</h4>
+<p class="table-note accent-intro">Accent the uncontracted form first, then contract the vowels.</p>
+<div class="quick-table-wrap"><table class="quick-table accent-table" aria-labelledby="accentRulesTitle">
+<thead><tr><th scope="col">Before contraction</th><th scope="col">After contraction</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><th scope="row">Acute on the first vowel</th><td>Circumflex <span lang="grc">῀</span></td><td><span class="greek-form" lang="grc">ποιέω → ποιῶ</span></td></tr>
+<tr><th scope="row">Acute on the second vowel</th><td>Acute <span lang="grc">´</span></td><td><span class="greek-form" lang="grc">ἑσταώς → ἑστώς</span></td></tr>
+<tr><th scope="row">Neither vowel accented</th><td>No new accent;<br>existing accent stays</td><td><span class="greek-form" lang="grc">ὅραε → ὅρα</span></td></tr>
+</tbody></table></div>
+<p class="table-note">Usual pattern; normal accent rules still apply. <a href="https://grammars.alpheios.net/smyth/xhtml/body.1_div1.1_div2.7.html" target="_blank" rel="noopener">Smyth §§171–172</a>.</p>
 </section>
 </article>
 <p class="grammar-footer-note">Attic Greek · JACT 2a / 2b</p>
