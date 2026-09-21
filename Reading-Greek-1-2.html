@@ -46,10 +46,13 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 .grammar-hero h2{margin:0;font:700 1.8rem/1.25 var(--serif)}
 .grammar-print{padding:8px 16px;color:#fff;background:var(--blue);border-color:var(--blue);white-space:nowrap}
 .grammar-print:hover{color:#fff;background:var(--accent)}
-.sheet-nav{position:sticky;top:0;z-index:8;display:flex;gap:8px;margin:12px 0 16px;padding:8px;background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow-x:auto}
-.sheet-nav a{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:6px;color:var(--blue);font-size:.88rem;font-weight:650;text-decoration:none;white-space:nowrap}
+.sheet-nav{position:sticky;top:0;z-index:8;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.35fr) minmax(0,.8fr);gap:0;margin:12px 0 16px;padding:8px;background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow-x:auto}
+.sheet-nav-group{min-width:0;padding:2px 9px}
+.sheet-nav-group+.sheet-nav-group{border-left:1px solid var(--line)}
+.sheet-nav-label{display:block;margin:0 7px 3px;color:var(--muted);font-size:.68rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.sheet-nav-links{display:flex;gap:3px;flex-wrap:wrap}
+.sheet-nav a{display:inline-flex;align-items:center;padding:6px 8px;border-radius:6px;color:var(--blue);font-size:.84rem;font-weight:650;text-decoration:none;white-space:nowrap}
 .sheet-nav a:hover{background:#fff}
-.sheet-nav .sheet-no{display:inline-grid;place-items:center;width:21px;height:21px;border-radius:50%;color:#fff;background:var(--blue);font-size:.72rem;flex-shrink:0}
 .grammar-sheet{scroll-margin-top:72px;min-width:0;margin:0 0 18px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:8px}
 .sheet-heading{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--blue)}
 .sheet-title{display:flex;align-items:baseline;gap:10px;min-width:0}
@@ -84,6 +87,7 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 .verb-table{min-width:800px}
 .middle-primary{min-width:620px}
 .middle-contract-table{min-width:800px}
+.irregular-table{min-width:680px}
 .type-one-feminine{min-width:910px}
 .type-one-masculine{min-width:820px}
 .syntax-table{min-width:760px}
@@ -116,8 +120,10 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
  .grammar-hero{padding:16px;gap:10px}
  .grammar-hero h2{font-size:1.5rem}
  .grammar-print{padding:7px 10px;font-size:.85rem}
- .sheet-nav{gap:3px;padding:6px}
- .sheet-nav a{padding:6px 8px;font-size:.8rem}
+ .sheet-nav{display:flex;gap:0;padding:6px}
+ .sheet-nav-group{flex:0 0 auto;padding:2px 7px}
+ .sheet-nav-links{flex-wrap:nowrap}
+ .sheet-nav a{padding:6px 7px;font-size:.8rem}
  .grammar-sheet{padding:16px 12px}
  .sheet-heading h3{font-size:1.3rem}
  .quick-table th,.quick-table td{padding:8px}
@@ -198,7 +204,11 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 
 <section id="grammarView" class="view-panel grammar-view" hidden aria-labelledby="grammarTitle">
 <div class="grammar-hero"><h2 id="grammarTitle">Grammar quick sheets</h2><button type="button" id="printGrammar" class="grammar-print">Print</button></div>
-<nav class="sheet-nav" aria-label="速查表導覽"><a href="#personal-pronouns"><span class="sheet-no">01</span>Pronouns</a><a href="#type-two-nouns"><span class="sheet-no">02</span>Article &amp; nouns</a><a href="#adjectives"><span class="sheet-no">03</span>Adjectives</a><a href="#contract-verbs"><span class="sheet-no">04</span>Contract verbs</a><a href="#middle-verbs"><span class="sheet-no">05</span>Middle verbs</a><a href="#type-one-nouns"><span class="sheet-no">06</span>Type 1 nouns</a><a href="#section-two-syntax"><span class="sheet-no">07</span>Syntax &amp; prepositions</a></nav>
+<nav class="sheet-nav" aria-label="Grammar quick-sheet navigation">
+<div class="sheet-nav-group"><span class="sheet-nav-label">Nominals</span><div class="sheet-nav-links"><a href="#personal-pronouns">Pronouns</a><a href="#type-two-nouns">Article + Type 2</a><a href="#adjectives">Adjectives</a><a href="#type-one-nouns">Type 1</a></div></div>
+<div class="sheet-nav-group"><span class="sheet-nav-label">Verbs</span><div class="sheet-nav-links"><a href="#contract-verbs">Contract</a><a href="#middle-verbs">Middle</a><a href="#irregular-verbs">Irregular</a></div></div>
+<div class="sheet-nav-group"><span class="sheet-nav-label">Syntax</span><div class="sheet-nav-links"><a href="#section-two-syntax">Genitive + preps</a></div></div>
+</nav>
 
 <article id="personal-pronouns" class="grammar-sheet">
 <div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">01</span><h3>Personal pronouns</h3></div><p>Nom. · Acc. · Gen. · Dat. — enclitic forms follow the slash.</p></div>
@@ -336,8 +346,21 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 <p class="table-note">2pl. indicative = 2pl. imperative. These forms use the same contraction rules as active contract verbs.</p>
 </article>
 
+<article id="irregular-verbs" class="grammar-sheet">
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">06</span><h3>Irregular verbs</h3></div><p>Sections 1–2 · present indicative</p></div>
+<div class="quick-table-wrap"><table class="quick-table irregular-table"><thead><tr><th scope="col">Person</th><th scope="col"><span lang="grc">εἰμί</span><br>be</th><th scope="col"><span lang="grc">οἶδα</span><br>know</th></tr></thead><tbody>
+<tr><th scope="row">1s.</th><td><span class="greek-form" lang="grc">εἰμί</span><span class="gloss">I am</span></td><td><span class="greek-form" lang="grc">οἶδα</span><span class="gloss">I know</span></td></tr>
+<tr><th scope="row">2s.</th><td><span class="greek-form" lang="grc">εἶ</span><span class="gloss">you are</span></td><td><span class="greek-form" lang="grc">οἶσθα</span><span class="gloss">you know</span></td></tr>
+<tr><th scope="row">3s.</th><td><span class="greek-form" lang="grc">ἐστί(ν)</span><span class="gloss">he / she / it is</span></td><td><span class="greek-form" lang="grc">οἶδε</span><span class="gloss">he / she / it knows</span></td></tr>
+<tr><th scope="row">1pl.</th><td><span class="greek-form" lang="grc">ἐσμέν</span><span class="gloss">we are</span></td><td><span class="greek-form" lang="grc">ἴσμεν</span><span class="gloss">we know</span></td></tr>
+<tr><th scope="row">2pl.</th><td><span class="greek-form" lang="grc">ἐστέ</span><span class="gloss">you are</span></td><td><span class="greek-form" lang="grc">ἴστε</span><span class="gloss">you know</span></td></tr>
+<tr><th scope="row">3pl.</th><td><span class="greek-form" lang="grc">εἰσί(ν)</span><span class="gloss">they are</span></td><td><span class="greek-form" lang="grc">ἴσασι(ν)</span><span class="gloss">they know</span></td></tr>
+</tbody></table></div>
+<p class="table-note">These are the two irregular present paradigms introduced in Sections 1–2. <span lang="grc">ἔρχομαι</span> follows the regular middle endings in the present.</p>
+</article>
+
 <article id="type-one-nouns" class="grammar-sheet">
-<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">06</span><h3>Type 1 nouns</h3></div><p>Section 2 · 1a / 1b / 1c feminine; 1d masculine</p></div>
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">07</span><h3>Type 1 nouns</h3></div><p>Section 2 · 1a / 1b / 1c feminine; 1d masculine</p></div>
 <h4 class="subsheet-title">Feminine · <span lang="grc">βοή · ἀπορία · θάλαττα</span></h4>
 <div class="quick-table-wrap"><table class="quick-table type-one-feminine"><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="2" scope="colgroup">1a · <span lang="grc">βοή</span></th><th colspan="2" scope="colgroup">1b · <span lang="grc">ἀπορία</span></th><th colspan="2" scope="colgroup">1c · <span lang="grc">θάλαττα</span></th></tr><tr><th scope="col">singular</th><th scope="col">plural</th><th scope="col">singular</th><th scope="col">plural</th><th scope="col">singular</th><th scope="col">plural</th></tr></thead><tbody>
 <tr><th scope="row"><span class="case-key">Nom.</span></th><td><span class="greek-form" lang="grc">βοή</span></td><td><span class="greek-form" lang="grc">βοαί</span></td><td><span class="greek-form" lang="grc">ἀπορία</span></td><td><span class="greek-form" lang="grc">ἀπορίαι</span></td><td><span class="greek-form" lang="grc">θάλαττα</span></td><td><span class="greek-form" lang="grc">θάλατται</span></td></tr>
@@ -359,7 +382,7 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 </article>
 
 <article id="section-two-syntax" class="grammar-sheet">
-<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">07</span><h3>Section 2 syntax &amp; prepositions</h3></div><p>Genitive · article position · case government</p></div>
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">08</span><h3>Section 2 syntax &amp; prepositions</h3></div><p>Genitive · article position · case government</p></div>
 <h4 class="subsheet-title">Genitive and article position</h4>
 <div class="quick-table-wrap"><table class="quick-table syntax-table"><thead><tr><th scope="col">Pattern</th><th scope="col">Form</th><th scope="col">Use</th></tr></thead><tbody>
 <tr><th scope="row">Plain genitive</th><td><span class="greek-form" lang="grc">τὸ πλοῖον τῶν ἀνθρώπων</span></td><td>the ship of the men</td></tr>
@@ -539,7 +562,7 @@ function setPage(page,{scroll=true}={}){
   if(button.dataset.pageNav===(grammar?'grammar':'vocabulary'))button.setAttribute('aria-current','page');
   else button.removeAttribute('aria-current');
  });
- $('viewEdition').innerHTML=grammar?'<strong>Quick sheets</strong>7 組表格 · 離線使用':'<strong>Section 1–2</strong>14 個段落 · 離線使用';
+ $('viewEdition').innerHTML=grammar?'<strong>Quick sheets</strong>8 組表格 · 離線使用':'<strong>Section 1–2</strong>14 個段落 · 離線使用';
  document.title=grammar?'Reading Greek · 文法速查':'Reading Greek · Section 1–2 單字查詢';
  if(scroll)window.scrollTo({top:0,behavior:'auto'});
 }
@@ -549,7 +572,7 @@ document.querySelectorAll('[data-page-nav]').forEach(button=>button.addEventList
  try{history.replaceState(null,'',page==='grammar'?'#grammar':location.pathname+location.search)}catch{}
 }));
 const initialHash=location.hash.slice(1);
-setPage(['grammar','personal-pronouns','type-two-nouns','adjectives','contract-verbs','middle-verbs','type-one-nouns','section-two-syntax'].includes(initialHash)?'grammar':'vocabulary',{scroll:false});
+setPage(['grammar','personal-pronouns','type-two-nouns','adjectives','contract-verbs','middle-verbs','irregular-verbs','type-one-nouns','section-two-syntax'].includes(initialHash)?'grammar':'vocabulary',{scroll:false});
 $('expand').addEventListener('click',()=>{state.scope='all';state.segment='all';state.learn=false;$('learnOnly').checked=false;render()});
 $('reset').addEventListener('click',()=>{Object.assign(state,{scope:'all',segment:'all',query:'',learn:false});$('search').value='';$('learnOnly').checked=false;render()});
 document.addEventListener('keydown',e=>{
