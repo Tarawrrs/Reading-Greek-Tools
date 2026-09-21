@@ -82,6 +82,12 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 .adjective-table{min-width:910px}
 .adjective-two-table{min-width:720px}
 .verb-table{min-width:800px}
+.middle-primary{min-width:620px}
+.middle-contract-table{min-width:800px}
+.type-one-feminine{min-width:910px}
+.type-one-masculine{min-width:820px}
+.syntax-table{min-width:760px}
+.syntax-table .greek-form{font-size:1.35rem;white-space:normal}
 .table-note{margin:12px 0 0;color:var(--muted);font-size:1rem;line-height:1.65}
 .table-note strong{color:var(--ink)}
 .mini-panel{margin-top:18px;min-width:0;padding:14px;border:1px solid var(--line);border-radius:6px;background:var(--row-tint)}
@@ -127,12 +133,12 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
  .grammar-view{padding:0}
  .grammar-hero{padding:0 0 8px;border:0;border-bottom:2px solid #333;border-radius:0}
  .grammar-sheet{break-inside:avoid;margin:10px 0;padding:9px;border-color:#aaa}
- #adjectives{break-inside:auto}
+ #adjectives,#middle-verbs,#type-one-nouns,#section-two-syntax{break-inside:auto}
  .adjective-paradigm{break-inside:avoid}
  .sheet-heading{margin-bottom:7px;padding-bottom:5px}
  .sheet-heading h3{font-size:13pt}
  .sheet-heading p{font-size:10pt}
- .quick-table-wrap{overflow:visible;border-color:#999}
+ .quick-table-wrap{overflow:visible;border-color:#999;break-inside:avoid}
  .quick-table{min-width:0}
  .quick-table th,.quick-table td{padding:4px 5px;border-color:#bbb}
  .quick-table thead th{background:#eee}
@@ -192,7 +198,7 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 
 <section id="grammarView" class="view-panel grammar-view" hidden aria-labelledby="grammarTitle">
 <div class="grammar-hero"><h2 id="grammarTitle">Grammar quick sheets</h2><button type="button" id="printGrammar" class="grammar-print">Print</button></div>
-<nav class="sheet-nav" aria-label="速查表導覽"><a href="#personal-pronouns"><span class="sheet-no">01</span>Pronouns</a><a href="#type-two-nouns"><span class="sheet-no">02</span>Article &amp; nouns</a><a href="#adjectives"><span class="sheet-no">03</span>Adjectives</a><a href="#contract-verbs"><span class="sheet-no">04</span>Contract verbs</a></nav>
+<nav class="sheet-nav" aria-label="速查表導覽"><a href="#personal-pronouns"><span class="sheet-no">01</span>Pronouns</a><a href="#type-two-nouns"><span class="sheet-no">02</span>Article &amp; nouns</a><a href="#adjectives"><span class="sheet-no">03</span>Adjectives</a><a href="#contract-verbs"><span class="sheet-no">04</span>Contract verbs</a><a href="#middle-verbs"><span class="sheet-no">05</span>Middle verbs</a><a href="#type-one-nouns"><span class="sheet-no">06</span>Type 1 nouns</a><a href="#section-two-syntax"><span class="sheet-no">07</span>Syntax &amp; prepositions</a></nav>
 
 <article id="personal-pronouns" class="grammar-sheet">
 <div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">01</span><h3>Personal pronouns</h3></div><p>Nom. · Acc. · Gen. · Dat. — enclitic forms follow the slash.</p></div>
@@ -302,6 +308,79 @@ body[data-page="grammar"] :is(button,summary,a):focus-visible{outline-color:var(
 </tbody></table></div>
 <p class="table-note">Accent elsewhere stays. Normal accent rules apply. <a href="https://grammars.alpheios.net/smyth/xhtml/body.1_div1.1_div2.7.html" target="_blank" rel="noopener">Smyth §§171–172</a>.</p>
 </section>
+</article>
+<article id="middle-verbs" class="grammar-sheet">
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">05</span><h3>Middle verbs · -ομαι</h3></div><p>Section 2 · present indicative and imperative</p></div>
+<h4 class="subsheet-title">Uncontracted · <span lang="grc">ἔρχομαι</span> “go / come”</h4>
+<div class="quick-table-wrap"><table class="quick-table middle-primary"><thead><tr><th scope="col">Person</th><th scope="col">Indicative</th><th scope="col">Meaning</th></tr></thead><tbody>
+<tr><th scope="row">1s.</th><td><span class="greek-form" lang="grc">ἔρχομαι</span></td><td>I go</td></tr>
+<tr><th scope="row">2s.</th><td><span class="greek-form" lang="grc">ἔρχῃ / ἔρχει</span></td><td>you go</td></tr>
+<tr><th scope="row">3s.</th><td><span class="greek-form" lang="grc">ἔρχεται</span></td><td>he / she / it goes</td></tr>
+<tr><th scope="row">1pl.</th><td><span class="greek-form" lang="grc">ἐρχόμεθα</span></td><td>we go</td></tr>
+<tr><th scope="row">2pl.</th><td><span class="greek-form" lang="grc">ἔρχεσθε</span></td><td>you go</td></tr>
+<tr><th scope="row">3pl.</th><td><span class="greek-form" lang="grc">ἔρχονται</span></td><td>they go</td></tr>
+</tbody></table></div>
+<section class="mini-panel" aria-labelledby="middleImperativeTitle"><h4 id="middleImperativeTitle">Present middle imperative</h4><div class="mini-table-wrap"><table class="mini-table"><thead><tr><th scope="col">Person</th><th scope="col">Form</th><th scope="col">Meaning</th></tr></thead><tbody><tr><th scope="row">2s.</th><td lang="grc">ἔρχου</td><td>go!</td></tr><tr><th scope="row">2pl.</th><td lang="grc">ἔρχεσθε</td><td>go!</td></tr></tbody></table></div></section>
+<p class="table-note">Endings: <span lang="grc">-μαι · -σαι · -ται · -μεθα · -σθε · -νται</span>. In 2s., intervocalic <span lang="grc">σ</span> disappears: <span lang="grc">-εσαι → -εαι → -ῃ</span>.</p>
+<h4 class="subsheet-title">Contract middle · α / ε / ο</h4>
+<div class="verb-toolbar"><p>Present indicative middle · <span id="middleVerbFormLabel" aria-live="polite">contracted</span></p><div class="verb-form-switch" role="group" aria-label="Middle verb forms"><button type="button" data-middle-verb-form="contracted" aria-pressed="true" aria-controls="middleIndicativeTable middleContractImperativeTable">Contracted</button><button type="button" data-middle-verb-form="uncontracted" aria-pressed="false" aria-controls="middleIndicativeTable middleContractImperativeTable">Uncontracted</button></div></div>
+<div class="quick-table-wrap"><table class="quick-table middle-contract-table" id="middleIndicativeTable"><thead><tr><th scope="col">Person</th><th scope="col">α-contract<br><span lang="grc">θεάομαι</span> “watch”</th><th scope="col">ε-contract<br><span lang="grc">φοβέομαι</span> “fear”</th><th scope="col">ο-contract<br><span lang="grc">δουλόομαι</span> “enslave”</th></tr></thead><tbody>
+<tr><th scope="row">1s.</th><td><span class="greek-form" lang="grc" data-contracted="θεῶμαι" data-uncontracted="θεά·ομαι">θεῶμαι</span></td><td><span class="greek-form" lang="grc" data-contracted="φοβοῦμαι" data-uncontracted="φοβέ·ομαι">φοβοῦμαι</span></td><td><span class="greek-form" lang="grc" data-contracted="δουλοῦμαι" data-uncontracted="δουλό·ομαι">δουλοῦμαι</span></td></tr>
+<tr><th scope="row">2s.</th><td><span class="greek-form" lang="grc" data-contracted="θεᾷ" data-uncontracted="θεά·ῃ">θεᾷ</span></td><td><span class="greek-form" lang="grc" data-contracted="φοβῇ" data-uncontracted="φοβέ·ῃ">φοβῇ</span></td><td><span class="greek-form" lang="grc" data-contracted="δουλοῖ" data-uncontracted="δουλό·ῃ">δουλοῖ</span></td></tr>
+<tr><th scope="row">3s.</th><td><span class="greek-form" lang="grc" data-contracted="θεᾶται" data-uncontracted="θεά·εται">θεᾶται</span></td><td><span class="greek-form" lang="grc" data-contracted="φοβεῖται" data-uncontracted="φοβέ·εται">φοβεῖται</span></td><td><span class="greek-form" lang="grc" data-contracted="δουλοῦται" data-uncontracted="δουλό·εται">δουλοῦται</span></td></tr>
+<tr><th scope="row">1pl.</th><td><span class="greek-form" lang="grc" data-contracted="θεώμεθα" data-uncontracted="θεα·όμεθα">θεώμεθα</span></td><td><span class="greek-form" lang="grc" data-contracted="φοβούμεθα" data-uncontracted="φοβε·όμεθα">φοβούμεθα</span></td><td><span class="greek-form" lang="grc" data-contracted="δουλούμεθα" data-uncontracted="δουλο·όμεθα">δουλούμεθα</span></td></tr>
+<tr><th scope="row">2pl.</th><td><span class="greek-form" lang="grc" data-contracted="θεᾶσθε" data-uncontracted="θεά·εσθε">θεᾶσθε</span></td><td><span class="greek-form" lang="grc" data-contracted="φοβεῖσθε" data-uncontracted="φοβέ·εσθε">φοβεῖσθε</span></td><td><span class="greek-form" lang="grc" data-contracted="δουλοῦσθε" data-uncontracted="δουλό·εσθε">δουλοῦσθε</span></td></tr>
+<tr><th scope="row">3pl.</th><td><span class="greek-form" lang="grc" data-contracted="θεῶνται" data-uncontracted="θεά·ονται">θεῶνται</span></td><td><span class="greek-form" lang="grc" data-contracted="φοβοῦνται" data-uncontracted="φοβέ·ονται">φοβοῦνται</span></td><td><span class="greek-form" lang="grc" data-contracted="δουλοῦνται" data-uncontracted="δουλό·ονται">δουλοῦνται</span></td></tr>
+</tbody></table></div>
+<section class="mini-panel" aria-labelledby="middleContractImperativeTitle"><h4 id="middleContractImperativeTitle">Contract middle imperative</h4><div class="mini-table-wrap"><table class="mini-table" id="middleContractImperativeTable"><thead><tr><th scope="col">Person</th><th scope="col">α-contract</th><th scope="col">ε-contract</th><th scope="col">ο-contract</th></tr></thead><tbody><tr><th scope="row">2s.</th><td lang="grc" data-contracted="θεῶ" data-uncontracted="θεά·ου">θεῶ</td><td lang="grc" data-contracted="φοβοῦ" data-uncontracted="φοβέ·ου">φοβοῦ</td><td lang="grc" data-contracted="δουλοῦ" data-uncontracted="δουλό·ου">δουλοῦ</td></tr><tr><th scope="row">2pl.</th><td lang="grc" data-contracted="θεᾶσθε" data-uncontracted="θεά·εσθε">θεᾶσθε</td><td lang="grc" data-contracted="φοβεῖσθε" data-uncontracted="φοβέ·εσθε">φοβεῖσθε</td><td lang="grc" data-contracted="δουλοῦσθε" data-uncontracted="δουλό·εσθε">δουλοῦσθε</td></tr></tbody></table></div></section>
+<p class="table-note">2pl. indicative = 2pl. imperative. These forms use the same contraction rules as active contract verbs.</p>
+</article>
+
+<article id="type-one-nouns" class="grammar-sheet">
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">06</span><h3>Type 1 nouns</h3></div><p>Section 2 · 1a / 1b / 1c feminine; 1d masculine</p></div>
+<h4 class="subsheet-title">Feminine · <span lang="grc">βοή · ἀπορία · θάλαττα</span></h4>
+<div class="quick-table-wrap"><table class="quick-table type-one-feminine"><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="2" scope="colgroup">1a · <span lang="grc">βοή</span></th><th colspan="2" scope="colgroup">1b · <span lang="grc">ἀπορία</span></th><th colspan="2" scope="colgroup">1c · <span lang="grc">θάλαττα</span></th></tr><tr><th scope="col">singular</th><th scope="col">plural</th><th scope="col">singular</th><th scope="col">plural</th><th scope="col">singular</th><th scope="col">plural</th></tr></thead><tbody>
+<tr><th scope="row"><span class="case-key">Nom.</span></th><td><span class="greek-form" lang="grc">βοή</span></td><td><span class="greek-form" lang="grc">βοαί</span></td><td><span class="greek-form" lang="grc">ἀπορία</span></td><td><span class="greek-form" lang="grc">ἀπορίαι</span></td><td><span class="greek-form" lang="grc">θάλαττα</span></td><td><span class="greek-form" lang="grc">θάλατται</span></td></tr>
+<tr><th scope="row"><span class="case-key">Acc.</span></th><td><span class="greek-form" lang="grc">βοήν</span></td><td><span class="greek-form" lang="grc">βοάς</span></td><td><span class="greek-form" lang="grc">ἀπορίαν</span></td><td><span class="greek-form" lang="grc">ἀπορίας</span></td><td><span class="greek-form" lang="grc">θάλατταν</span></td><td><span class="greek-form" lang="grc">θαλάττας</span></td></tr>
+<tr><th scope="row"><span class="case-key">Gen.</span></th><td><span class="greek-form" lang="grc">βοῆς</span></td><td><span class="greek-form" lang="grc">βοῶν</span></td><td><span class="greek-form" lang="grc">ἀπορίας</span></td><td><span class="greek-form" lang="grc">ἀποριῶν</span></td><td><span class="greek-form" lang="grc">θαλάττης</span></td><td><span class="greek-form" lang="grc">θαλαττῶν</span></td></tr>
+<tr><th scope="row"><span class="case-key">Dat.</span></th><td><span class="greek-form" lang="grc">βοῇ</span></td><td><span class="greek-form" lang="grc">βοαῖς</span></td><td><span class="greek-form" lang="grc">ἀπορίᾳ</span></td><td><span class="greek-form" lang="grc">ἀπορίαις</span></td><td><span class="greek-form" lang="grc">θαλάττῃ</span></td><td><span class="greek-form" lang="grc">θαλάτταις</span></td></tr>
+<tr><th scope="row"><span class="case-key">Voc.</span></th><td><span class="greek-form" lang="grc">βοή</span></td><td><span class="greek-form" lang="grc">βοαί</span></td><td><span class="greek-form" lang="grc">ἀπορία</span></td><td><span class="greek-form" lang="grc">ἀπορίαι</span></td><td><span class="greek-form" lang="grc">θάλαττα</span></td><td><span class="greek-form" lang="grc">θάλατται</span></td></tr>
+</tbody></table></div>
+<p class="table-note">1a keeps <span lang="grc">η</span> in the singular. 1b keeps long <span lang="grc">α</span> after <span lang="grc">ε, ι, ρ</span>. 1c has short <span lang="grc">α</span> in Nom./Acc. singular, but <span lang="grc">η</span> in Gen./Dat. singular. All share the same plural endings.</p>
+<h4 class="subsheet-title">Masculine 1d · <span lang="grc">ναύτης · νεανίας</span></h4>
+<div class="quick-table-wrap"><table class="quick-table type-one-masculine"><thead><tr><th scope="col">Case</th><th scope="col"><span lang="grc">ναύτης</span><br>singular</th><th scope="col"><span lang="grc">ναύτης</span><br>plural</th><th scope="col"><span lang="grc">νεανίας</span><br>singular</th><th scope="col"><span lang="grc">νεανίας</span><br>plural</th></tr></thead><tbody>
+<tr><th scope="row"><span class="case-key">Nom.</span></th><td><span class="greek-form" lang="grc">ναύτης</span></td><td><span class="greek-form" lang="grc">ναῦται</span></td><td><span class="greek-form" lang="grc">νεανίας</span></td><td><span class="greek-form" lang="grc">νεανίαι</span></td></tr>
+<tr><th scope="row"><span class="case-key">Acc.</span></th><td><span class="greek-form" lang="grc">ναύτην</span></td><td><span class="greek-form" lang="grc">ναύτας</span></td><td><span class="greek-form" lang="grc">νεανίαν</span></td><td><span class="greek-form" lang="grc">νεανίας</span></td></tr>
+<tr><th scope="row"><span class="case-key">Gen.</span></th><td><span class="greek-form" lang="grc">ναύτου</span></td><td><span class="greek-form" lang="grc">ναυτῶν</span></td><td><span class="greek-form" lang="grc">νεανίου</span></td><td><span class="greek-form" lang="grc">νεανιῶν</span></td></tr>
+<tr><th scope="row"><span class="case-key">Dat.</span></th><td><span class="greek-form" lang="grc">ναύτῃ</span></td><td><span class="greek-form" lang="grc">ναύταις</span></td><td><span class="greek-form" lang="grc">νεανίᾳ</span></td><td><span class="greek-form" lang="grc">νεανίαις</span></td></tr>
+<tr><th scope="row"><span class="case-key">Voc.</span></th><td><span class="greek-form" lang="grc">ναῦτα</span></td><td><span class="greek-form" lang="grc">ναῦται</span></td><td><span class="greek-form" lang="grc">νεανία</span></td><td><span class="greek-form" lang="grc">νεανίαι</span></td></tr>
+</tbody></table></div>
+<p class="table-note">1d is masculine: use <span lang="grc">ὁ</span>. The singular endings resemble feminine Type 1, except Gen. <span lang="grc">-ου</span>.</p>
+</article>
+
+<article id="section-two-syntax" class="grammar-sheet">
+<div class="sheet-heading"><div class="sheet-title"><span class="sheet-index">07</span><h3>Section 2 syntax &amp; prepositions</h3></div><p>Genitive · article position · case government</p></div>
+<h4 class="subsheet-title">Genitive and article position</h4>
+<div class="quick-table-wrap"><table class="quick-table syntax-table"><thead><tr><th scope="col">Pattern</th><th scope="col">Form</th><th scope="col">Use</th></tr></thead><tbody>
+<tr><th scope="row">Plain genitive</th><td><span class="greek-form" lang="grc">τὸ πλοῖον τῶν ἀνθρώπων</span></td><td>the ship of the men</td></tr>
+<tr><th scope="row">Sandwich</th><td><span class="greek-form" lang="grc">τὸ τῶν ἀνθρώπων πλοῖον</span></td><td>modifier between article and noun</td></tr>
+<tr><th scope="row">Repeated article</th><td><span class="greek-form" lang="grc">τὸ πλοῖον τὸ τῶν ἀνθρώπων</span></td><td>specifies which ship</td></tr>
+<tr><th scope="row">Article + preposition</th><td><span class="greek-form" lang="grc">οἱ ἐν Σαλαμῖνι</span></td><td>the men / those in Salamis</td></tr>
+<tr><th scope="row">Article + preposition</th><td><span class="greek-form" lang="grc">τὰ περὶ Σαλαμῖνα</span></td><td>the things / events around Salamis</td></tr>
+</tbody></table></div>
+<p class="table-note">The genitive often means “of”. All nouns and adjectives in the genitive plural end in <span lang="grc">-ων</span>.</p>
+<h4 class="subsheet-title">Prepositions by case · Sections 1–2</h4>
+<div class="quick-table-wrap"><table class="quick-table syntax-table"><thead><tr><th scope="col">Case</th><th scope="col">Preposition</th><th scope="col">Meaning here</th><th scope="col">Example</th></tr></thead><tbody>
+<tr><th scope="row">Acc.</th><td><span class="greek-form" lang="grc">εἰς</span></td><td>into</td><td><span class="greek-form" lang="grc">εἰς τὴν θάλατταν</span></td></tr>
+<tr><th scope="row">Acc.</th><td><span class="greek-form" lang="grc">πρός</span></td><td>towards</td><td><span class="greek-form" lang="grc">πρὸς τὴν γῆν</span></td></tr>
+<tr><th scope="row">Acc.</th><td><span class="greek-form" lang="grc">παρά</span></td><td>along / alongside</td><td><span class="greek-form" lang="grc">παρὰ τὸ πλοῖον</span></td></tr>
+<tr><th scope="row">Acc.</th><td><span class="greek-form" lang="grc">ἐπί</span></td><td>against / at / to attack</td><td><span class="greek-form" lang="grc">ἐπὶ τοὺς πολεμίους</span></td></tr>
+<tr><th scope="row">Acc.</th><td><span class="greek-form" lang="grc">διά</span></td><td>because of</td><td><span class="greek-form" lang="grc">διὰ τὸν πόλεμον</span></td></tr>
+<tr><th scope="row">Gen.</th><td><span class="greek-form" lang="grc">ἀπό</span></td><td>away from</td><td><span class="greek-form" lang="grc">ἀπὸ τῶν φίλων</span></td></tr>
+<tr><th scope="row">Gen.</th><td><span class="greek-form" lang="grc">ἐκ / ἐξ</span></td><td>out of / from</td><td><span class="greek-form" lang="grc">ἐκ τῶν πλοίων</span></td></tr>
+<tr><th scope="row">Dat.</th><td><span class="greek-form" lang="grc">ἐν</span></td><td>in / on / among</td><td><span class="greek-form" lang="grc">ἐν τῇ θαλάττῃ</span></td></tr>
+</tbody></table></div>
+<p class="table-note">Meanings shown are the uses introduced in Sections 1–2; some prepositions govern other cases with different meanings later. Source: <a href="https://api.pageplace.de/preview/DT0400.9780511353086_A24403766/preview-9780511353086_A24403766.pdf#page=61" target="_blank" rel="noopener">Reading Greek, §§52–65, pp.43–50</a>.</p>
 </article>
 <p class="grammar-footer-note">Attic Greek · JACT 2a / 2b</p>
 </section>
@@ -437,6 +516,20 @@ function setVerbForm(form){
 document.querySelectorAll('[data-verb-form]').forEach(button=>button.addEventListener('click',()=>setVerbForm(button.dataset.verbForm)));
 let savedVerbForm='contracted';try{savedVerbForm=localStorage.getItem('readingGreekVerbForm')||'contracted'}catch{}
 setVerbForm(savedVerbForm);
+function setMiddleVerbForm(form){
+ const selected=form==='uncontracted'?'uncontracted':'contracted';
+ document.querySelectorAll('#middle-verbs [data-contracted]').forEach(cell=>{
+  cell.textContent=cell.dataset[selected];
+ });
+ document.querySelectorAll('[data-middle-verb-form]').forEach(button=>{
+  button.setAttribute('aria-pressed',String(button.dataset.middleVerbForm===selected));
+ });
+ $('middleVerbFormLabel').textContent=selected;
+ try{localStorage.setItem('readingGreekMiddleVerbForm',selected)}catch{}
+}
+document.querySelectorAll('[data-middle-verb-form]').forEach(button=>button.addEventListener('click',()=>setMiddleVerbForm(button.dataset.middleVerbForm)));
+let savedMiddleVerbForm='contracted';try{savedMiddleVerbForm=localStorage.getItem('readingGreekMiddleVerbForm')||'contracted'}catch{}
+setMiddleVerbForm(savedMiddleVerbForm);
 function setPage(page,{scroll=true}={}){
  const grammar=page==='grammar';
  document.body.dataset.page=grammar?'grammar':'vocabulary';
@@ -446,7 +539,7 @@ function setPage(page,{scroll=true}={}){
   if(button.dataset.pageNav===(grammar?'grammar':'vocabulary'))button.setAttribute('aria-current','page');
   else button.removeAttribute('aria-current');
  });
- $('viewEdition').innerHTML=grammar?'<strong>Quick sheets</strong>4 組表格 · 離線使用':'<strong>Section 1–2</strong>14 個段落 · 離線使用';
+ $('viewEdition').innerHTML=grammar?'<strong>Quick sheets</strong>7 組表格 · 離線使用':'<strong>Section 1–2</strong>14 個段落 · 離線使用';
  document.title=grammar?'Reading Greek · 文法速查':'Reading Greek · Section 1–2 單字查詢';
  if(scroll)window.scrollTo({top:0,behavior:'auto'});
 }
@@ -456,7 +549,7 @@ document.querySelectorAll('[data-page-nav]').forEach(button=>button.addEventList
  try{history.replaceState(null,'',page==='grammar'?'#grammar':location.pathname+location.search)}catch{}
 }));
 const initialHash=location.hash.slice(1);
-setPage(['grammar','personal-pronouns','type-two-nouns','adjectives','contract-verbs'].includes(initialHash)?'grammar':'vocabulary',{scroll:false});
+setPage(['grammar','personal-pronouns','type-two-nouns','adjectives','contract-verbs','middle-verbs','type-one-nouns','section-two-syntax'].includes(initialHash)?'grammar':'vocabulary',{scroll:false});
 $('expand').addEventListener('click',()=>{state.scope='all';state.segment='all';state.learn=false;$('learnOnly').checked=false;render()});
 $('reset').addEventListener('click',()=>{Object.assign(state,{scope:'all',segment:'all',query:'',learn:false});$('search').value='';$('learnOnly').checked=false;render()});
 document.addEventListener('keydown',e=>{
