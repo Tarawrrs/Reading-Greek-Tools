@@ -22,6 +22,7 @@ If authentication or Pages setup is incomplete, report the concrete blocker; do 
 - Keep grammar columns evenly spaced, text readable, and horizontal scrolling inside each table.
 - Contracted/uncontracted mode shows one form per cell.
 - Whenever the site expands to a new textbook Section, audit the newly introduced verbs against the textbook grammar and vocabulary lists. Add new irregular paradigms to `#irregular-verbs`; do not infer paradigms the book has not introduced.
+- Follow `docs/CONTENT-SOP.md` for every content expansion or taxonomy change, and run `node scripts/validate-content.mjs` before browser QA.
 
 ## Publication scope
 

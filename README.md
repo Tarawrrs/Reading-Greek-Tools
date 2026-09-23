@@ -6,10 +6,10 @@ Website (after GitHub Pages is enabled): https://tarawrrs.github.io/Reading-Gree
 
 ## Contents
 
-- Reading Greek Sections 1–2 vocabulary, search, and alphabet navigation.
-- Personal pronouns, definite article, Type 1–2 nouns, and regular adjective paradigms.
-- Active, middle, and irregular verb paradigms, including contracted/uncontracted forms.
-- Section 2 genitive constructions and prepositions by governed case.
+- Reading Greek Sections 1–5 vocabulary, search, part-of-speech filters, and alphabet navigation.
+- Progressive declension and conjugation references with textbook section citations.
+- Active, middle, contract, participle, imperfect, future, and introduced irregular verb forms.
+- A grammar library ordered by learning prerequisite rather than update date.
 - Print layouts and embedded Greek fonts.
 
 ## Source and publishing
@@ -26,6 +26,12 @@ For updates, edit the application, check the affected behavior, commit the inten
 git add Reading-Greek-1-2.html
 git commit -m "Update Greek reference tables"
 git push origin main
+```
+
+Follow [`docs/CONTENT-SOP.md`](docs/CONTENT-SOP.md) for the source, data, cross-tab, validation, browser-QA, and publishing checks. Run the zero-dependency content validator before browser QA:
+
+```sh
+node scripts/validate-content.mjs
 ```
 
 Source PDFs are local references, excluded by `.gitignore`, and are not part of this website.
