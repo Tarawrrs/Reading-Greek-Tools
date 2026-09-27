@@ -5,8 +5,8 @@
 ## 1. 先定義變更範圍
 
 1. 記錄目標 Section／segment／頁碼與《Reading Greek: Grammar and Exercises》段落號。
-2. 只擷取該階段首次引入的：
-   - learning vocabulary；
+2. 擷取該階段教材明列、值得查閱的：
+   - summary learning vocabulary（可與前節重複，但保留新的來源）；
    - declension / conjugation paradigms；
    - syntax and writing rules；
    - irregular stems or forms explicitly introduced by the book.
@@ -18,10 +18,10 @@
 
 | Field | Rule |
 | --- | --- |
-| `g` | 課文實際形式，保留重音與 breathing |
+| `g` | running vocabulary 用課文實際形式；learning-list 資料用印在列表上的 headword，保留重音與 breathing |
 | `lemma` | 教材或字典型；不用去重音字串當 identity |
 | `en` | 該課文中的 contextual gloss，不假裝是唯一字典義 |
-| `section`, `segment`, `page` | 首次或當次出處 |
+| `section`, `segment`, `page` | 實際出處；總學習詞彙表使用印刷的區段範圍與《Grammar and Exercises》頁碼，不臆造首次出現的細分段落 |
 | `pos` | 必須是既有 filter 之一；片語用 `Phrase` |
 | `class` | 名詞用 1a–3g，動詞用 ω-verb / contract / middle-deponent / irregular |
 | `headword` | 可直接顯示的 dictionary form |
@@ -34,6 +34,9 @@
 - `εἰς / εἷς`、`τίς / τις`、`πῶς / πως` 必須分離。
 - 片語和例句不能假裝成 lemma；用 `Phrase` 分類。
 - 既有 META 不足時加 explicit metadata，不再擴張 heuristic 去猜。
+- Sections 6–8 的總學習詞彙表放在 `vocabulary-next` 的 compact `groups` 裡：每組記錄教材區段、書頁，每個 `entries` row 是 `[headword, gloss, POS, optional class]`。執行時展開為同一索引，但 UI 必須明示「learning list」，不能標成 running-text form。
+- 語法已引入、卻不在總學習詞彙表的必要模型（例如 3h `ὀφρύς`）放在 `vocabulary-grammar`，來源標為 `grammar`，不加 learning-list 星號。
+- 介詞帶不同格且意思不同時，查閱介面應保留 case label；片語不得冒充一般詞形。
 
 ## 3. 跨分頁一致性
 
@@ -60,6 +63,7 @@ node scripts/validate-content.mjs
 它會檢查：
 
 - embedded JSON 可解析且必要欄位完整；
+- Sections 6–8 的總學習詞彙分組、詞性及名詞／動詞分類；
 - Section / segment / page 範圍；
 - 重複 ID、重複 card ID、缺少 source reference；
 - 已知 accent-sensitive lexeme 是否有獨立 identity；
@@ -82,6 +86,6 @@ Error 必須修正後才可發佈；warning 需要審核並說明為何不增加
 
 1. `git diff --check`
 2. `node scripts/validate-content.mjs`
-3. 只 stage `Reading-Greek-1-2.html`、SOP 與 validator；不 stage PDF、tmp 或 QA 圖。
+3. 只 stage 此次實際修改的網站與維護檔；不 stage PDF、tmp 或 QA 圖。
 4. Commit to `main`，再 push `origin/main`；不 force-push。
 5. 回報 commit，並明確區分「已 push」與「Pages 已完成部署」。

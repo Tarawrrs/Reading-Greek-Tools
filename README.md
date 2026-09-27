@@ -6,9 +6,9 @@ Website (after GitHub Pages is enabled): https://tarawrrs.github.io/Reading-Gree
 
 ## Contents
 
-- Reading Greek Sections 1–5 vocabulary, search, part-of-speech filters, and alphabet navigation.
+- Reading Greek Sections 1–8 vocabulary, search, part-of-speech filters, and alphabet navigation. Sections 6–8 use the book's grouped learning lists, clearly distinguished from running-text forms.
 - Progressive declension and conjugation references with textbook section citations.
-- Active, middle, contract, participle, imperfect, future, and introduced irregular verb forms.
+- Active, middle, contract, participle, imperfect, future, aorist, optative, and introduced irregular verb forms.
 - A grammar library ordered by learning prerequisite rather than update date.
 - Print layouts and embedded Greek fonts.
 
