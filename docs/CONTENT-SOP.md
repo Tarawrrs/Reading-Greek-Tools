@@ -23,7 +23,7 @@
 | `en` | 該課文中的 contextual gloss，不假裝是唯一字典義 |
 | `section`, `segment`, `page` | 實際出處；總學習詞彙表使用印刷的區段範圍與《Grammar and Exercises》頁碼，不臆造首次出現的細分段落 |
 | `pos` | 必須是既有 filter 之一；片語用 `Phrase` |
-| `class` | 名詞用 1a–3g，動詞用 ω-verb / contract / middle-deponent / irregular |
+| `class` | 名詞用 1a–3h；動詞先標 present pattern（ω-verb、α/ε/ο-contract、-μι／athematic），再標 middle voice 或教材已介紹的 irregular stem／future 特性 |
 | `headword` | 可直接顯示的 dictionary form |
 | `lexemeId` | 只在同形異義或跨資料集需穩定合併時填寫 |
 | `morph` | 只填經教材／語法表確認的 parsing；不以字尾猜測 |
@@ -34,6 +34,7 @@
 - `εἰς / εἷς`、`τίς / τις`、`πῶς / πως` 必須分離。
 - 片語和例句不能假裝成 lemma；用 `Phrase` 分類。
 - 既有 META 不足時加 explicit metadata，不再擴張 heuristic 去猜。
+- 動詞的 `-ομαι` 只表示 middle 形式，不能據此判定是否 contract 或是否 deponent。教材確認的例外與複合類型放在 HTML 的 `verb-types` 明確對照表；新增動詞先核對這張表與課本，再讓 UI 套用 fallback。尤其檢查 `-άομαι`、`-έομαι`、`-όομαι`、`-μι`、少數只部分縮約的 `πλέω` 類，以及詞表列出的變化形。
 - Sections 6–8 的總學習詞彙表放在 `vocabulary-next` 的 compact `groups` 裡：每組記錄教材區段、書頁，每個 `entries` row 是 `[headword, gloss, POS, optional class]`。執行時展開為同一索引，但 UI 必須明示「learning list」，不能標成 running-text form。
 - 語法已引入、卻不在總學習詞彙表的必要模型（例如 3h `ὀφρύς`）放在 `vocabulary-grammar`，來源標為 `grammar`，不加 learning-list 星號。
 - 介詞帶不同格且意思不同時，查閱介面應保留 case label；片語不得冒充一般詞形。
@@ -64,6 +65,7 @@ node scripts/validate-content.mjs
 
 - embedded JSON 可解析且必要欄位完整；
 - Sections 6–8 的總學習詞彙分組、詞性及名詞／動詞分類；
+- `verb-types` 對照表的詞條存在性，以及教材 middle contract 模型不會退化成籠統的 middle 標籤；
 - Section / segment / page 範圍；
 - 重複 ID、重複 card ID、缺少 source reference；
 - 已知 accent-sensitive lexeme 是否有獨立 identity；

@@ -13,13 +13,13 @@ function embeddedJson(id) {
   const match = html.match(new RegExp(`<script id="${id}" type="application/json">([\\s\\S]*?)<\\/script>`));
   if (!match) {
     errors.push(`missing embedded JSON: ${id}`);
-    return id === 'lexicon-meta' || id === 'vocabulary-next' ? {} : [];
+    return ['lexicon-meta', 'vocabulary-next', 'verb-types'].includes(id) ? {} : [];
   }
   try {
     return JSON.parse(match[1]);
   } catch (error) {
     errors.push(`${id} is not valid JSON: ${error.message}`);
-    return id === 'lexicon-meta' || id === 'vocabulary-next' ? {} : [];
+    return ['lexicon-meta', 'vocabulary-next', 'verb-types'].includes(id) ? {} : [];
   }
 }
 
@@ -28,6 +28,7 @@ const additions = embeddedJson('vocabulary-additions');
 const meta = embeddedJson('lexicon-meta');
 const next = embeddedJson('vocabulary-next');
 const grammarRows = embeddedJson('vocabulary-grammar');
+const verbTypes = embeddedJson('verb-types');
 const allowedPos = new Set(['Noun', 'Proper noun', 'Verb', 'Adjective', 'Pronoun', 'Adverb', 'Preposition', 'Article', 'Conjunction', 'Particle', 'Phrase', 'Interjection', 'Other']);
 const expectedGroups = ['6:6A–D', '7:7A–C', '7:7D–F', '7:7G–H', '8:8A–C'];
 const actualGroups = (next.groups || []).map(group => `${group.section}:${group.segment}`);
@@ -47,6 +48,18 @@ const nextRows = (next.groups || []).flatMap(group => {
 });
 if (!Array.isArray(grammarRows) || !grammarRows.some(row => row.lemma === 'ὀφρύς' && row.class === '3h · f.')) errors.push('missing Section 6 grammar-only 3h headword');
 const rows = [...base, ...additions, ...nextRows, ...grammarRows];
+const listedLemmas = new Set(rows.map(row => row.lemma));
+for (const [lemma, type] of Object.entries(verbTypes)) {
+  if (!listedLemmas.has(lemma)) errors.push(`verb-types: unused lemma ${lemma}`);
+  if (typeof type !== 'string' || !type.trim()) errors.push(`verb-types: missing type for ${lemma}`);
+}
+const plainGreek = value => String(value).normalize('NFD').replace(/\p{M}/gu, '').replace(/ς/g, 'σ').toLowerCase();
+for (const row of rows) {
+  const lemma = plainGreek(row.lemma);
+  const vowel = lemma.endsWith('αομαι') ? 'α' : lemma.endsWith('εομαι') ? 'ε' : lemma.endsWith('οομαι') ? 'ο' : '';
+  if (vowel && !verbTypes[row.lemma]?.startsWith(`${vowel}-contract · middle`)) errors.push(`${row.segment} ${row.lemma}: middle contract type must be explicit (${vowel})`);
+}
+for (const lemma of ['πλέω', 'ἐπιπλέω']) if (verbTypes[lemma] !== 'limited ε-contraction') errors.push(`${lemma}: partial contraction exception missing`);
 const required = ['g', 'lemma', 'en', 'section', 'segment', 'page'];
 const ids = new Map();
 
