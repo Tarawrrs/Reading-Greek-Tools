@@ -9,6 +9,7 @@ main{padding:34px 0 70px}.page-hero{display:flex;align-items:end;justify-content
 .verb-form-switch button{color:var(--ink)}
 .verb-form-switch button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:700;box-shadow:inset 0 0 0 1px var(--accent)}
 .verb-form-switch button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.participle-table{min-width:930px}.participle-table .case-col{width:11%}.participle-table thead tr:first-child th:last-child,.participle-table thead tr:nth-child(2) th:nth-child(4),.participle-table tbody td:nth-child(5){border-left:2px solid var(--line)}
 @media(max-width:850px){.head{align-items:flex-start;flex-direction:column}.edition{display:none}.project-nav{width:100%;display:grid;grid-template-columns:repeat(2,1fr)}.project-nav button{border-radius:8px}.wrap{width:min(100% - 22px,1520px)}.page-hero{align-items:start;flex-direction:column}.searchbar{flex-wrap:wrap}.alphabet-keys{grid-template-columns:repeat(12,1fr)}.resultbar{align-items:flex-start;flex-direction:column}.formula-grid{grid-template-columns:1fr 1fr}.sheet-heading{display:block}.sheet-heading p{text-align:left}.grammar-sheet{padding:16px}.sheet-nav{overflow:visible}.sheet-nav a{display:none}.sheet-jump{display:block}body{font-size:16px}}
 @media(max-width:520px){.formula-grid{grid-template-columns:1fr}.alphabet-keys{grid-template-columns:repeat(8,1fr)}.seal{width:48px;height:48px}.brand h1{font-size:25px}.page-hero h2{font-size:42px}.table-shell{border:0;background:transparent;overflow:visible}#vocabTable{display:block}#vocabTable thead{display:none}#vocabTable tbody{display:grid;gap:12px}#vocabTable tr{display:block;background:white;border:1px solid var(--line);border-radius:12px;padding:15px}#vocabTable td{display:block;width:auto!important;border:0;padding:5px 0;overflow-wrap:normal;word-break:normal}#vocabTable td::before{display:block;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}#vocabTable td:nth-child(2)::before{content:"Gloss in text"}#vocabTable td:nth-child(3)::before{content:"Forms met"}#vocabTable td:nth-child(4)::before{content:"Source"}.headword{font-size:27px}.source{display:flex;flex-wrap:wrap}.source button{min-width:58px}.compact #vocabTable td:nth-child(3){display:none}}
 @media(max-width:520px){.scope{flex-wrap:wrap;overflow:visible;gap:4px}.scope .filter-label{width:100%}.scope button{padding:5px 7px}#vocabTable td:nth-child(2)::before{content:"Glosses"}#vocabTable td:nth-child(3)::before{content:"Forms / learning list"}}
@@ -233,49 +234,33 @@ main{padding:34px 0 70px}.page-hero{display:flex;align-items:end;justify-content
 <article id="present-participles" class="grammar-sheet" data-track="conjugation" data-order="50">
 <div class="sheet-heading"><div class="sheet-title"><span class="sheet-index"></span><h3>Present participles</h3></div><p>Agree with their noun in gender, number, and case.</p></div>
 <h4 class="subsheet-title"><span lang="grc">εἰμί</span> · being · 3-1-3</h4>
-<div class="quick-table-wrap"><table class="quick-table"><thead><tr><th scope="col">Number / case</th><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th></tr></thead><tbody>
-<tr><th scope="row">Sg. nom.</th><td lang="grc">ὤν</td><td lang="grc">οὖσα</td><td lang="grc">ὄν</td></tr>
-<tr><th scope="row">Sg. acc.</th><td lang="grc">ὄντα</td><td lang="grc">οὖσαν</td><td lang="grc">ὄν</td></tr>
-<tr><th scope="row">Sg. gen.</th><td lang="grc">ὄντος</td><td lang="grc">οὔσης</td><td lang="grc">ὄντος</td></tr>
-<tr><th scope="row">Sg. dat.</th><td lang="grc">ὄντι</td><td lang="grc">οὔσῃ</td><td lang="grc">ὄντι</td></tr>
-<tr><th scope="row">Pl. nom.</th><td lang="grc">ὄντες</td><td lang="grc">οὖσαι</td><td lang="grc">ὄντα</td></tr>
-<tr><th scope="row">Pl. acc.</th><td lang="grc">ὄντας</td><td lang="grc">οὔσας</td><td lang="grc">ὄντα</td></tr>
-<tr><th scope="row">Pl. gen.</th><td lang="grc">ὄντων</td><td lang="grc">οὐσῶν</td><td lang="grc">ὄντων</td></tr>
-<tr><th scope="row">Pl. dat.</th><td lang="grc">οὖσι(ν)</td><td lang="grc">οὔσαις</td><td lang="grc">οὖσι(ν)</td></tr>
+<div class="quick-table-wrap"><table class="quick-table participle-table"><colgroup><col class="case-col"><col span="6"></colgroup><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="3" scope="colgroup">Singular</th><th colspan="3" scope="colgroup">Plural</th></tr><tr><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th></tr></thead><tbody>
+<tr><th scope="row">Nom.</th><td lang="grc">ὤν</td><td lang="grc">οὖσα</td><td lang="grc">ὄν</td><td lang="grc">ὄντες</td><td lang="grc">οὖσαι</td><td lang="grc">ὄντα</td></tr>
+<tr><th scope="row">Acc.</th><td lang="grc">ὄντα</td><td lang="grc">οὖσαν</td><td lang="grc">ὄν</td><td lang="grc">ὄντας</td><td lang="grc">οὔσας</td><td lang="grc">ὄντα</td></tr>
+<tr><th scope="row">Gen.</th><td lang="grc">ὄντος</td><td lang="grc">οὔσης</td><td lang="grc">ὄντος</td><td lang="grc">ὄντων</td><td lang="grc">οὐσῶν</td><td lang="grc">ὄντων</td></tr>
+<tr><th scope="row">Dat.</th><td lang="grc">ὄντι</td><td lang="grc">οὔσῃ</td><td lang="grc">ὄντι</td><td lang="grc">οὖσι(ν)</td><td lang="grc">οὔσαις</td><td lang="grc">οὖσι(ν)</td></tr>
 </tbody></table></div>
 <h4 class="subsheet-title">Present active · <span lang="grc">παύω</span> · 3-1-3</h4>
-<div class="quick-table-wrap"><table class="quick-table"><thead><tr><th scope="col">Number / case</th><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th></tr></thead><tbody>
-<tr><th scope="row">Sg. nom.</th><td lang="grc">παύων</td><td lang="grc">παύουσα</td><td lang="grc">παῦον</td></tr>
-<tr><th scope="row">Sg. acc.</th><td lang="grc">παύοντα</td><td lang="grc">παύουσαν</td><td lang="grc">παῦον</td></tr>
-<tr><th scope="row">Sg. gen.</th><td lang="grc">παύοντος</td><td lang="grc">παυούσης</td><td lang="grc">παύοντος</td></tr>
-<tr><th scope="row">Sg. dat.</th><td lang="grc">παύοντι</td><td lang="grc">παυούσῃ</td><td lang="grc">παύοντι</td></tr>
-<tr><th scope="row">Pl. nom.</th><td lang="grc">παύοντες</td><td lang="grc">παύουσαι</td><td lang="grc">παύοντα</td></tr>
-<tr><th scope="row">Pl. acc.</th><td lang="grc">παύοντας</td><td lang="grc">παυούσας</td><td lang="grc">παύοντα</td></tr>
-<tr><th scope="row">Pl. gen.</th><td lang="grc">παυόντων</td><td lang="grc">παυουσῶν</td><td lang="grc">παυόντων</td></tr>
-<tr><th scope="row">Pl. dat.</th><td lang="grc">παύουσι(ν)</td><td lang="grc">παυούσαις</td><td lang="grc">παύουσι(ν)</td></tr>
+<div class="quick-table-wrap"><table class="quick-table participle-table"><colgroup><col class="case-col"><col span="6"></colgroup><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="3" scope="colgroup">Singular</th><th colspan="3" scope="colgroup">Plural</th></tr><tr><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th></tr></thead><tbody>
+<tr><th scope="row">Nom.</th><td lang="grc">παύων</td><td lang="grc">παύουσα</td><td lang="grc">παῦον</td><td lang="grc">παύοντες</td><td lang="grc">παύουσαι</td><td lang="grc">παύοντα</td></tr>
+<tr><th scope="row">Acc.</th><td lang="grc">παύοντα</td><td lang="grc">παύουσαν</td><td lang="grc">παῦον</td><td lang="grc">παύοντας</td><td lang="grc">παυούσας</td><td lang="grc">παύοντα</td></tr>
+<tr><th scope="row">Gen.</th><td lang="grc">παύοντος</td><td lang="grc">παυούσης</td><td lang="grc">παύοντος</td><td lang="grc">παυόντων</td><td lang="grc">παυουσῶν</td><td lang="grc">παυόντων</td></tr>
+<tr><th scope="row">Dat.</th><td lang="grc">παύοντι</td><td lang="grc">παυούσῃ</td><td lang="grc">παύοντι</td><td lang="grc">παύουσι(ν)</td><td lang="grc">παυούσαις</td><td lang="grc">παύουσι(ν)</td></tr>
 </tbody></table></div>
 <h4 class="subsheet-title">Present active · ε-contract <span lang="grc">ποιέω</span> · 3-1-3</h4>
-<div class="quick-table-wrap"><table class="quick-table"><thead><tr><th scope="col">Number / case</th><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th></tr></thead><tbody>
-<tr><th scope="row">Sg. nom.</th><td lang="grc">ποιῶν</td><td lang="grc">ποιοῦσα</td><td lang="grc">ποιοῦν</td></tr>
-<tr><th scope="row">Sg. acc.</th><td lang="grc">ποιοῦντα</td><td lang="grc">ποιοῦσαν</td><td lang="grc">ποιοῦν</td></tr>
-<tr><th scope="row">Sg. gen.</th><td lang="grc">ποιοῦντος</td><td lang="grc">ποιούσης</td><td lang="grc">ποιοῦντος</td></tr>
-<tr><th scope="row">Sg. dat.</th><td lang="grc">ποιοῦντι</td><td lang="grc">ποιούσῃ</td><td lang="grc">ποιοῦντι</td></tr>
-<tr><th scope="row">Pl. nom.</th><td lang="grc">ποιοῦντες</td><td lang="grc">ποιοῦσαι</td><td lang="grc">ποιοῦντα</td></tr>
-<tr><th scope="row">Pl. acc.</th><td lang="grc">ποιοῦντας</td><td lang="grc">ποιούσας</td><td lang="grc">ποιοῦντα</td></tr>
-<tr><th scope="row">Pl. gen.</th><td lang="grc">ποιούντων</td><td lang="grc">ποιουσῶν</td><td lang="grc">ποιούντων</td></tr>
-<tr><th scope="row">Pl. dat.</th><td lang="grc">ποιοῦσι(ν)</td><td lang="grc">ποιούσαις</td><td lang="grc">ποιοῦσι(ν)</td></tr>
+<div class="quick-table-wrap"><table class="quick-table participle-table"><colgroup><col class="case-col"><col span="6"></colgroup><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="3" scope="colgroup">Singular</th><th colspan="3" scope="colgroup">Plural</th></tr><tr><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th></tr></thead><tbody>
+<tr><th scope="row">Nom.</th><td lang="grc">ποιῶν</td><td lang="grc">ποιοῦσα</td><td lang="grc">ποιοῦν</td><td lang="grc">ποιοῦντες</td><td lang="grc">ποιοῦσαι</td><td lang="grc">ποιοῦντα</td></tr>
+<tr><th scope="row">Acc.</th><td lang="grc">ποιοῦντα</td><td lang="grc">ποιοῦσαν</td><td lang="grc">ποιοῦν</td><td lang="grc">ποιοῦντας</td><td lang="grc">ποιούσας</td><td lang="grc">ποιοῦντα</td></tr>
+<tr><th scope="row">Gen.</th><td lang="grc">ποιοῦντος</td><td lang="grc">ποιούσης</td><td lang="grc">ποιοῦντος</td><td lang="grc">ποιούντων</td><td lang="grc">ποιουσῶν</td><td lang="grc">ποιούντων</td></tr>
+<tr><th scope="row">Dat.</th><td lang="grc">ποιοῦντι</td><td lang="grc">ποιούσῃ</td><td lang="grc">ποιοῦντι</td><td lang="grc">ποιοῦσι(ν)</td><td lang="grc">ποιούσαις</td><td lang="grc">ποιοῦσι(ν)</td></tr>
 </tbody></table></div>
 <p class="table-note">Other contracted active nominatives: <span lang="grc">τιμῶν · τιμῶσα · τιμῶν</span> (α); <span lang="grc">δηλῶν · δηλοῦσα · δηλοῦν</span> (ο). The case endings follow the same 3-1-3 pattern.</p>
 <h4 class="subsheet-title">Present middle · <span lang="grc">παύομαι</span> · 2-1-2</h4>
-<div class="quick-table-wrap"><table class="quick-table"><thead><tr><th scope="col">Number / case</th><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th></tr></thead><tbody>
-<tr><th scope="row">Sg. nom.</th><td lang="grc">παυόμενος</td><td lang="grc">παυομένη</td><td lang="grc">παυόμενον</td></tr>
-<tr><th scope="row">Sg. acc.</th><td lang="grc">παυόμενον</td><td lang="grc">παυομένην</td><td lang="grc">παυόμενον</td></tr>
-<tr><th scope="row">Sg. gen.</th><td lang="grc">παυομένου</td><td lang="grc">παυομένης</td><td lang="grc">παυομένου</td></tr>
-<tr><th scope="row">Sg. dat.</th><td lang="grc">παυομένῳ</td><td lang="grc">παυομένῃ</td><td lang="grc">παυομένῳ</td></tr>
-<tr><th scope="row">Pl. nom.</th><td lang="grc">παυόμενοι</td><td lang="grc">παυόμεναι</td><td lang="grc">παυόμενα</td></tr>
-<tr><th scope="row">Pl. acc.</th><td lang="grc">παυομένους</td><td lang="grc">παυομένας</td><td lang="grc">παυόμενα</td></tr>
-<tr><th scope="row">Pl. gen.</th><td lang="grc">παυομένων</td><td lang="grc">παυομένων</td><td lang="grc">παυομένων</td></tr>
-<tr><th scope="row">Pl. dat.</th><td lang="grc">παυομένοις</td><td lang="grc">παυομέναις</td><td lang="grc">παυομένοις</td></tr>
+<div class="quick-table-wrap"><table class="quick-table participle-table"><colgroup><col class="case-col"><col span="6"></colgroup><thead><tr><th rowspan="2" scope="col">Case</th><th colspan="3" scope="colgroup">Singular</th><th colspan="3" scope="colgroup">Plural</th></tr><tr><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th><th scope="col">Masc.</th><th scope="col">Fem.</th><th scope="col">Neut.</th></tr></thead><tbody>
+<tr><th scope="row">Nom.</th><td lang="grc">παυόμενος</td><td lang="grc">παυομένη</td><td lang="grc">παυόμενον</td><td lang="grc">παυόμενοι</td><td lang="grc">παυόμεναι</td><td lang="grc">παυόμενα</td></tr>
+<tr><th scope="row">Acc.</th><td lang="grc">παυόμενον</td><td lang="grc">παυομένην</td><td lang="grc">παυόμενον</td><td lang="grc">παυομένους</td><td lang="grc">παυομένας</td><td lang="grc">παυόμενα</td></tr>
+<tr><th scope="row">Gen.</th><td lang="grc">παυομένου</td><td lang="grc">παυομένης</td><td lang="grc">παυομένου</td><td lang="grc">παυομένων</td><td lang="grc">παυομένων</td><td lang="grc">παυομένων</td></tr>
+<tr><th scope="row">Dat.</th><td lang="grc">παυομένῳ</td><td lang="grc">παυομένῃ</td><td lang="grc">παυομένῳ</td><td lang="grc">παυομένοις</td><td lang="grc">παυομέναις</td><td lang="grc">παυομένοις</td></tr>
 </tbody></table></div>
 <p class="table-note">Contracted middle participles keep these endings: <span lang="grc">φοβούμενος</span> (ε), <span lang="grc">θεώμενος</span> (α), <span lang="grc">δουλούμενος</span> (ο).</p>
 <p class="source-ref">Reading Greek: Grammar &amp; Exercises · §§87, 90–93 · Section 4</p></article>
